@@ -1,0 +1,141 @@
+/*------------------------main------------------------*/
+
+.main {
+}
+
+.main__container {
+}
+
+.main__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.details__top {
+}
+
+.details__name {
+}
+
+.details__body {
+    display: flex;
+    gap: 30px;
+}
+
+.details__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.details__icon {
+    background-color: #e0e55c;
+    border-radius: 10px;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px 0;
+}
+
+.details__image {
+    width: 200px;
+}
+
+.details__right {
+}
+
+.right__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list__type {
+}
+
+.prop {
+    display: flex;
+    gap: 5px;
+}
+
+.field {
+    font-weight: bold;
+}
+
+.type__field {
+}
+
+.type__value {
+}
+
+.list__hp {
+}
+
+.hp__field {
+}
+.hp__value {
+}
+
+.list__attack {
+}
+
+.attack__field {
+}
+
+.attack__value {
+}
+
+.list__defense {
+}
+
+.defense__field {
+}
+
+.defense__value {
+}
+
+.list__price {
+}
+
+.price__field {
+}
+
+.price__value {
+}
+
+.list__descr {
+    flex-direction: column;
+}
+
+.descr__field {
+}
+
+.descr__value {
+    width: 400px;
+}
+
+@media(max-width: 750px){
+    .details__icon {
+        width: 420px;
+    }
+    .details__body {
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 500px){
+    .main__details {
+        width: 100%;
+    }
+    .details__body {
+        width: 100%;
+    }
+    .descr__value {
+        width: 100%;
+    }
+}
