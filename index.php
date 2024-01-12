@@ -54,8 +54,7 @@ include "php/index_logic.php";
                     <div class="list__container">
                         <?php foreach ($pokemons as $elem) : ?>
                             <div class="list__card">
-                                <div class="card_top" style="background-color: <?=
-                                    $storage2->findOne(['type' => $elem["type"]])["color"] ?>;">
+                                <div class="card_top" style="background-color: <?= $storage2->findOne(['type' => $elem["type"]])["color"] ?>;">
                                     <div class="card__icon">
                                         <img src="<?= $elem["image"] ?>" alt="<?= $elem["name"] ?>_img" class="card__image">
                                     </div>
@@ -63,7 +62,7 @@ include "php/index_logic.php";
 
                                 <div class="card__mid">
                                     <p class="card__link link">
-                                        <a href="pages/card.html" class="card__name">
+                                        <a href="pages/card.php?name=<?= $elem["name"] ?>" class="card__name">
                                             <?= $elem["name"] ?>
                                         </a>
                                     </p>
@@ -118,9 +117,9 @@ include "php/index_logic.php";
                                             <img src="img/money_icon.png" alt="tag_icon" class="price__image">
                                         </div>
 
-                                        <p class="price__value <?= 
-                                        $storage2->findOne(['type' => $elem["type"]])["text_color"] 
-                                            == "#000000" ? "buttext-dark" : "buttext-light" ?>">
+                                        <p class="price__value <?=
+                                                                $storage2->findOne(['type' => $elem["type"]])["text_color"]
+                                                                    == "#000000" ? "buttext-dark" : "buttext-light" ?>">
                                             <?= $elem["price"] ?>
                                         </p>
                                     </div>

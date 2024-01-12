@@ -1,3 +1,7 @@
+<?php
+include "../php/card_logic.php";
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -20,7 +24,7 @@
         <div class="header">
             <div class="header__container __container">
                 <div class="header__left">
-                    <a href="../index.html" class="logo__pic">
+                    <a href="../index.php" class="logo__pic">
                         <h1 class="header__logo">
                             IKémon
                         </h1>
@@ -41,14 +45,14 @@
                 <div class="main__details">
                     <div class="details__top">
                         <h2 class="details__name">
-                            Pikachu
+                            <?= $pokemon["name"] ?>
                         </h2>
                     </div>
 
                     <div class="details__body">
                         <div class="details__left">
-                            <div class="details__icon">
-                                <img src="../img/025.png" alt="" class="details__image">
+                            <div class="details__icon" style="background-color: <?= $storage2->findOne(['type' => $pokemon["type"]])["color"] ?>;">
+                                <img src="<?= $pokemon["image"] ?>" alt="<?= $pokemon["name"] ?>_img" class="details__image">
                             </div>
                         </div>
 
@@ -60,7 +64,7 @@
                                     </p>
 
                                     <p class="type__value">
-                                        electric
+                                        <?= $pokemon["type"] ?>
                                     </p>
                                 </div>
 
@@ -70,7 +74,7 @@
                                     </p>
 
                                     <p class="hp__value">
-                                        60
+                                        <?= $pokemon["hp"] ?>
                                     </p>
                                 </div>
 
@@ -80,7 +84,7 @@
                                     </p>
 
                                     <p class="attack__value">
-                                        20
+                                        <?= $pokemon["attack"] ?>
                                     </p>
                                 </div>
 
@@ -90,7 +94,7 @@
                                     </p>
 
                                     <p class="defense__value">
-                                        20
+                                        <?= $pokemon["defense"] ?>
                                     </p>
                                 </div>
 
@@ -100,7 +104,7 @@
                                     </p>
 
                                     <p class="price__value">
-                                        160
+                                        <?= $pokemon["price"] ?>
                                     </p>
                                 </div>
 
@@ -110,9 +114,7 @@
                                     </p>
 
                                     <p class="descr__value">
-                                        Pikachu that can generate powerful electricity have cheek sacs that are extra
-                                        soft
-                                        and super stretchy.
+                                        <?= $pokemon["description"] ?>
                                     </p>
                                 </div>
                             </div>
