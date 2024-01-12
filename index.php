@@ -32,7 +32,7 @@ include "php/index_logic.php";
                 </div>
                 <div class="header__right header__right-not-active">
                     <button type="button" class="header_button">
-                        <p class="header__acc buttext">
+                        <p class="header__acc buttext-dark">
                             Account
                         </p>
                     </button>
@@ -44,7 +44,7 @@ include "php/index_logic.php";
             <div class="main__container __container">
                 <div class="main__top">
                     <button type="button" class="main__button">
-                        <p class="main__add buttext">
+                        <p class="main__add buttext-dark">
                             Add card
                         </p>
                     </button>
@@ -52,9 +52,10 @@ include "php/index_logic.php";
 
                 <div class="main__list">
                     <div class="list__container">
-                        <?php foreach ($elems as $elem) : ?>
+                        <?php foreach ($pokemons as $elem) : ?>
                             <div class="list__card">
-                                <div class="card_top">
+                                <div class="card_top" style="background-color: <?=
+                                    $storage2->findOne(['type' => $elem["type"]])["color"] ?>;">
                                     <div class="card__icon">
                                         <img src="<?= $elem["image"] ?>" alt="<?= $elem["name"] ?>_img" class="card__image">
                                     </div>
@@ -110,13 +111,16 @@ include "php/index_logic.php";
                                     </div>
                                 </div>
 
-                                <button type="button" class="card__bottom">
+                                <button type="button" class="card__bottom" style="
+                                background-color: <?= $storage2->findOne(['type' => $elem["type"]])["color"] ?>;">
                                     <div class="card__price prop">
                                         <div class="price__icon icon">
                                             <img src="img/money_icon.png" alt="tag_icon" class="price__image">
                                         </div>
 
-                                        <p class="price__value buttext">
+                                        <p class="price__value <?= 
+                                        $storage2->findOne(['type' => $elem["type"]])["text_color"] 
+                                            == "#000000" ? "buttext-dark" : "buttext-light" ?>">
                                             <?= $elem["price"] ?>
                                         </p>
                                     </div>

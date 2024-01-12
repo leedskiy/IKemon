@@ -1,0 +1,97 @@
+{
+    "Normal": {
+        "type": "normal",
+        "color": "#c5b366",
+        "text_color": "#000000"
+    },
+    "Fire": {
+        "type": "fire",
+        "color": "#cc0000",
+        "text_color": "#ffffff"
+    },
+    "Water": {
+        "type": "water",
+        "color": "#3399ff",
+        "text_color": "#000000"
+    },
+    "Electric": {
+        "type": "electric",
+        "color": "#ffcc00",
+        "text_color": "#000000"
+    },
+    "Grass": {
+        "type": "grass",
+        "color": "#66cc33",
+        "text_color": "#000000"
+    },
+    "Ice": {
+        "type": "ice",
+        "color": "#99ccff",
+        "text_color": "#000000"
+    },
+    "Fighting": {
+        "type": "fighting",
+        "color": "#b30000",
+        "text_color": "#ffffff"
+    },
+    "Poison": {
+        "type": "poison",
+        "color": "#9933cc",
+        "text_color": "#ffffff"
+    },
+    "Ground": {
+        "type": "ground",
+        "color": "#996633",
+        "text_color": "#000000"
+    },
+    "Flying": {
+        "type": "flying",
+        "color": "#d4a6ff",
+        "text_color": "#000000"
+    },
+    "Psychic": {
+        "type": "psychic",
+        "color": "#ff6666",
+        "text_color": "#000000"
+    },
+    "Bug": {
+        "type": "bug",
+        "color": "#aedf4d",
+        "text_color": "#000000"
+    },
+    "Rock": {
+        "type": "rock",
+        "color": "#ccb96c",
+        "text_color": "#000000"
+    },
+    "Ghost": {
+        "type": "ghost",
+        "color": "#b5a8d3",
+        "text_color": "#ffffff"
+    },
+    "Dragon": {
+        "type": "dragon",
+        "color": "#7056d8",
+        "text_color": "#000000"
+    },
+    "Dark": {
+        "type": "dark",
+        "color": "#745d46",
+        "text_color": "#ffffff"
+    },
+    "Steel": {
+        "type": "steel",
+        "color": "#d8d8d8",
+        "text_color": "#000000"
+    },
+    "Fairy": {
+        "type": "fairy",
+        "color": "#ffc1e1",
+        "text_color": "#000000"
+    },
+    "Stellar": {
+        "type": "stellar",
+        "color": "#73ccff",
+        "text_color": "#000000"
+    }
+}
