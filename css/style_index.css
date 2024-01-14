@@ -24,6 +24,11 @@
     transition: background-color 0.4s;
 }
 
+.main__button:active {
+    transform: scale(1.02);
+    transition: transform 0.2s;
+}
+
 .main__add {
 }
 

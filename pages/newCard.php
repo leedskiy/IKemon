@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style_newCard.css" />
 </head>
 
 <body>
@@ -48,7 +49,7 @@
                                 <div class="from1__item">
                                     <label for="name" class="from1__label">Name:</label>
                                     <input type="text" class="from1__input from1__input1" id="name" name="name" placeholder="name">
-                                    <p class="from1__error1 from1__error"></p>
+                                    <p class="from1__error1 from1__error">error text bla bla bla</p>
                                 </div>
                                 <div class="from1__item">
                                     <label for="type" class="from1__label">Type:</label>
@@ -77,7 +78,7 @@
                                 </div>
                                 <div class="from1__item">
                                     <label for="description" class="from1__label">Description:</label>
-                                    <textarea class="from1__textarea" id="description" name="description"></textarea>
+                                    <textarea class="from1__textarea from1__input" id="description" name="description" placeholder="i love pokemons"></textarea>
                                     <p class="from1__error7 from1__error"></p>
                                 </div>
                                 <div class="from1__item">
@@ -88,8 +89,12 @@
                                 </div>
                             </div>
                             <div class="form1_end">
-                                <button class="form1__button form1__button2" type="reset">Reset</button>
-                                <button class="form1__button form1__button1" type="submit">Submit</button>
+                                <button class="form1__button form1__button1" type="reset">
+                                    <p class="form1__buttext buttext-dark">Reset</p>
+                                </button>
+                                <button class="form1__button form1__button2" type="submit">
+                                    <p class="form1__buttext buttext-dark">Submit</p>
+                                </button>
                             </div>
                         </form>
                     </div>
