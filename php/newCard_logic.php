@@ -1,6 +1,8 @@
 <?php
 include "Storage.php";
+$storage1 = new Storage(new JsonIO(__DIR__ . '/../data/pokemon.json'));
 $storage2 = new Storage(new JsonIO(__DIR__ . '/../data/types_colors.json'));
+$pokemons = $storage1->findAll();
 $types_colors = $storage2->findAll();
 
 $data = [];
@@ -8,7 +10,7 @@ $errors = [];
 $input = $_GET ?? "";
 if ($input) {
     $valid = validate($data, $errors, $input, $types_colors);
-    addNewElement($valid, $data, $storage1);
+    addNewElement($valid, $data, $storage1, $pokemons);
 }
 
 function isValidType($newType, $types_colors)
@@ -178,7 +180,7 @@ function validate(&$data, &$errors, $input, $types_colors)
         !$errors["image"];
 }
 
-function addNewElement($valid, $data, &$storage1)
+function addNewElement($valid, $data, &$storage1, $pokemons)
 {
     if ($valid) {
         $new_elem = [
@@ -192,9 +194,12 @@ function addNewElement($valid, $data, &$storage1)
             "image" => $data["image"]
         ];
 
-        $storage1->add($new_elem);
-    }
+        $pokemonIds = array_keys($pokemons);
+        $lastPokemonIdNum = intval(substr(end($pokemonIds), 4, 10));
+        $newPokemonId = "card" . ($lastPokemonIdNum + 1);
+        $storage1->addWithId($new_elem, $newPokemonId);
 
-    header("Location: ../index.php");
-    exit();
+        header("Location: ../index.php");
+        exit();
+    }
 }

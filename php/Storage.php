@@ -48,6 +48,7 @@ class SerializeIO extends FileIO
 interface IStorage
 {
   function add($record): string;
+  function addWithId($record, string $id);
   function findById(string $id);
   function findAll(array $params = []);
   function findOne(array $params = []);
@@ -82,6 +83,22 @@ class Storage implements IStorage
     } else if (is_object($record)) {
       $record->id = $id;
     }
+    $this->contents[$id] = $record;
+    return $id;
+  }
+
+  public function addWithId($record, string $id)
+  {
+    if (isset($this->contents[$id])) {
+      throw new Exception("Record with ID $id already exists.");
+    }
+
+    if (is_array($record)) {
+      $record['id'] = $id;
+    } elseif (is_object($record)) {
+      $record->id = $id;
+    }
+
     $this->contents[$id] = $record;
     return $id;
   }
