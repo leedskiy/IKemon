@@ -229,6 +229,10 @@ body {
 }
 
 .header__right {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
 .header__right-not-active {

@@ -206,7 +206,7 @@ function addNewElement($valid, $data, &$storage1, $pokemons)
             $storage1->addWithId($new_elem, "card0");
         }
 
-        header("Location: ../index.php");
+        header("Location: ../index.php?username=admin");
         exit();
     }
 }

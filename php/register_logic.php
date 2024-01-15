@@ -99,7 +99,7 @@ function addNewElement($valid, $data, &$storage3, $users)
             "username" => $data["username"],
             "email" => $data["email"],
             "password" => $data["password1"],
-            "money" => 400
+            "money" => 700
         ];
         
         if(!empty($users)) {

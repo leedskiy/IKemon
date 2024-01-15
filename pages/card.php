@@ -24,18 +24,44 @@ include "../php/card_logic.php";
         <div class="header">
             <div class="header__container __container">
                 <div class="header__left">
-                    <a href="../index.php" class="logo__pic">
+                    <a href="../index.php?username=<?= $username ?? "" ?>" class="logo__pic">
                         <h1 class="header__logo">
                             IKémon
                         </h1>
                     </a>
                 </div>
                 <div class="header__right">
-                    <button type="button" class="header__button">
-                        <p class="header__acc buttext">
-                            Account
+                <?php if ($username && $user):?>
+                        <p class="header__money">
+                            <?php 
+                                if($user){
+                                    if(!$userIsAdmin) {
+                                        echo "money: " . $user["money"];
+                                    }
+                                }
+                            ?>
                         </p>
-                    </button>
+
+                        <form method="post" action="account.php?username=<?= $user["username"] ?>">
+                            <button type="submit" class="header__button">
+                                <p class="header__acc buttext-dark">
+                                    <?php 
+                                        if($user) {
+                                            echo $user["username"];
+                                        }
+                                    ?>
+                                </p>
+                            </button>
+                        </form>
+                    <?php else: ?>
+                        <form action="account.php">
+                            <button type="submit" class="header__button">
+                                <p class="header__acc buttext-dark">
+                                    Account
+                                </p>
+                            </button>
+                        </form>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

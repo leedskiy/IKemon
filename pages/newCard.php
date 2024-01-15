@@ -24,7 +24,7 @@ include "../php/newCard_logic.php";
         <div class="header">
             <div class="header__container __container">
                 <div class="header__left">
-                    <a href="../index.php" class="logo__pic">
+                    <a href="../index.php?username=admin" class="logo__pic">
                         <h1 class="header__logo">
                             IKémon
                         </h1>

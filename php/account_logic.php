@@ -7,7 +7,7 @@ $pokemons = $storage1->findAll();
 $types_colors = $storage2->findAll();
 $users = $storage3->findAll();
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_GET["username"] ?? "";
     $user = $storage3->findOne(['username' => $username]);
     $userIsAdmin = $username === "admin" ? true : false;

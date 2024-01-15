@@ -1,3 +1,7 @@
+<?php
+include "../php/account_logic.php";
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -20,7 +24,7 @@
         <div class="header">
             <div class="header__container __container">
                 <div class="header__left">
-                    <a href="../index.php" class="logo__pic">
+                    <a href="../index.php?username=<?= $username ?>" class="logo__pic">
                         <h1 class="header__logo">
                             IKémon
                         </h1>
@@ -31,26 +35,42 @@
             </div>
         </div>
 
-        <div class="main">
-            <div class="main__container __container">
-                <div class="main__content">
-                    <form action="login.php">
-                        <button type="submit" class="main__button">
-                            <p class="main__buttext buttext-dark">
-                                Login
-                            </p>
-                        </button>
-                    </form>
-                    <form action="register.php">
-                        <button type="submit" class="main__button">
-                            <p class="main__buttext buttext-dark">
-                                Register
-                            </p>
-                        </button>
-                    </form>
+        <?php if (($_SERVER['REQUEST_METHOD'] === 'POST') && $user):?>
+            <div class="main">
+                <div class="main__container __container">
+                    <div class="main__content">
+                        <form action="../index.php">
+                            <button type="submit" class="main__button">
+                                <p class="main__buttext buttext-dark">
+                                    Logout
+                                </p>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        <?php else: ?>
+            <div class="main">
+                <div class="main__container __container">
+                    <div class="main__content">
+                        <form action="login.php">
+                            <button type="submit" class="main__button">
+                                <p class="main__buttext buttext-dark">
+                                    Login
+                                </p>
+                            </button>
+                        </form>
+                        <form action="register.php">
+                            <button type="submit" class="main__button">
+                                <p class="main__buttext buttext-dark">
+                                    Register
+                                </p>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
 
         <div class="footer">
             <div class="footer__container __container">

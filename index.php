@@ -24,35 +24,61 @@ include "php/index_logic.php";
         <div class="header">
             <div class="header__container __container">
                 <div class="header__left">
-                    <a href="." class="logo__pic">
+                    <a href=".?username=<?= $username ?? "" ?>" class="logo__pic">
                         <h1 class="header__logo">
                             IKémon
                         </h1>
                     </a>
                 </div>
-                <div class="header__right"> 
-                    <form action="pages/account.php">
-                        <button type="submit" class="header__button">
-                            <p class="header__acc buttext-dark">
-                                Account
-                            </p>
-                        </button>
-                    </form>
+                <div class="header__right">
+                    <?php if ($user):?>
+                        <p class="header__money">
+                            <?php 
+                                if($user){
+                                    if(!$userIsAdmin) {
+                                        echo "money: " . $user["money"];
+                                    }
+                                }
+                            ?>
+                        </p>
+
+                        <form method="post" action="pages/account.php?username=<?= $user["username"] ?>">
+                            <button type="submit" class="header__button">
+                                <p class="header__acc buttext-dark">
+                                    <?php 
+                                        if($user) {
+                                            echo $user["username"];
+                                        }
+                                    ?>
+                                </p>
+                            </button>
+                        </form>
+                    <?php else: ?>
+                        <form action="pages/account.php">
+                            <button type="submit" class="header__button">
+                                <p class="header__acc buttext-dark">
+                                    Account
+                                </p>
+                            </button>
+                        </form>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
 
         <div class="main">
             <div class="main__container __container">
-                <div class="main__top">
-                    <form action="pages/newCard.php">
-                        <button type="submit" class="main__button">
-                            <p class="main__add buttext-dark">
-                                Add card
-                            </p>
-                        </button>
-                    </form>
-                </div>
+                <?php if ($userIsAdmin): ?>
+                    <div class="main__top">
+                        <form action="pages/newCard.php">
+                            <button type="submit" class="main__button">
+                                <p class="main__add buttext-dark">
+                                    Add card
+                                </p>
+                            </button>
+                        </form>
+                    </div>
+                <?php endif;?>
 
                 <div class="main__list">
                     <div class="list__container">
@@ -66,7 +92,8 @@ include "php/index_logic.php";
 
                                 <div class="card__mid">
                                     <p class="card__link link">
-                                        <a href="pages/card.php?name=<?= $elem["name"] ?>" class="card__name">
+                                        <a href="pages/card.php?name=<?= $elem["name"] ?>&username=<?= $username ?>" 
+                                        class="card__name">
                                             <?= $elem["name"] ?>
                                         </a>
                                     </p>
@@ -114,20 +141,22 @@ include "php/index_logic.php";
                                     </div>
                                 </div>
 
-                                <button type="button" class="card__bottom" style="
-                                background-color: <?= $storage2->findOne(['type' => $elem["type"]])["color"] ?>;">
-                                    <div class="card__price prop">
-                                        <div class="price__icon icon">
-                                            <img src="img/money_icon.png" alt="tag_icon" class="price__image">
-                                        </div>
+                                <?php if(!$userIsAdmin && $user): ?>
+                                    <button type="button" class="card__bottom" style="
+                                    background-color: <?= $storage2->findOne(['type' => $elem["type"]])["color"] ?>;">
+                                        <div class="card__price prop">
+                                            <div class="price__icon icon">
+                                                <img src="img/money_icon.png" alt="tag_icon" class="price__image">
+                                            </div>
 
-                                        <p class="price__value <?=
-                                                                $storage2->findOne(['type' => $elem["type"]])["text_color"]
-                                                                    == "#000000" ? "buttext-dark" : "buttext-light" ?>">
-                                            <?= $elem["price"] ?>
-                                        </p>
-                                    </div>
-                                </button>
+                                            <p class="price__value <?=
+                                                                    $storage2->findOne(['type' => $elem["type"]])["text_color"]
+                                                                        == "#000000" ? "buttext-dark" : "buttext-light" ?>">
+                                                <?= $elem["price"] ?>
+                                            </p>
+                                        </div>
+                                    </button>
+                                <?php endif; ?>
                             </div>
                         <?php endforeach; ?>
                     </div>
