@@ -43,11 +43,13 @@ include "php/index_logic.php";
         <div class="main">
             <div class="main__container __container">
                 <div class="main__top">
-                    <button type="button" class="main__button">
-                        <p class="main__add buttext-dark">
-                            Add card
-                        </p>
-                    </button>
+                    <form action="pages/newCard.php">
+                        <button type="submit" class="main__button">
+                            <p class="main__add buttext-dark">
+                                Add card
+                            </p>
+                        </button>
+                    </form>
                 </div>
 
                 <div class="main__list">

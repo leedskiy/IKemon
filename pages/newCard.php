@@ -1,3 +1,7 @@
+<?php
+include "../php/newCard_logic.php";
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -44,48 +48,56 @@
                     </h2>
 
                     <div class="main__body">
-                        <form action="" class="main__form1" method="post" enctype="text/plain" novalidate>
+                        <form action="./newCard.php" class="main__form1" method="get" enctype="text/plain" novalidate>
                             <div class="form1__body">
                                 <div class="from1__item">
                                     <label for="name" class="from1__label">Name:</label>
-                                    <input type="text" class="from1__input from1__input1" id="name" name="name" placeholder="name">
-                                    <p class="from1__error1 from1__error">error text bla bla bla</p>
+                                    <input type="text" class="from1__input from1__input1" id="name" 
+                                    value="<?= $input ? $input["name"] : "" ?>" name="name" placeholder="name">
+                                    <p class="from1__error1 from1__error"><?= $errors ? $errors["name"] : "" ?></p>
                                 </div>
                                 <div class="from1__item">
                                     <label for="type" class="from1__label">Type:</label>
-                                    <input type="text" class="from1__input from1__input2" id="type" name="type" placeholder="type">
-                                    <p class="from1__error2 from1__error"></p>
+                                    <input type="text" class="from1__input from1__input2" id="type" 
+                                    value="<?= $input ? $input["type"] : "" ?>" name="type" placeholder="type">
+                                    <p class="from1__error2 from1__error"><?= $errors ? $errors["type"] : "" ?></p>
                                 </div>
                                 <div class="from1__item">
                                     <label for="hp" class="from1__label">Hp:</label>
-                                    <input type="number" class="from1__input from1__input3" id="hp" name="hp" placeholder="99">
-                                    <p class="from1__error3 from1__error"></p>
+                                    <input type="number" class="from1__input from1__input3" id="hp" 
+                                    value="<?= $input ? $input["hp"] : "" ?>" name="hp" placeholder="99">
+                                    <p class="from1__error3 from1__error"><?= $errors ? $errors["hp"] : "" ?></p>
                                 </div>
                                 <div class="from1__item">
                                     <label for="attack" class="from1__label">Attack:</label>
-                                    <input type="number" class="from1__input from1__input3" id="attack" name="attack" placeholder="99">
-                                    <p class="from1__error4 from1__error"></p>
+                                    <input type="number" class="from1__input from1__input3" id="attack" 
+                                    value="<?= $input ? $input["attack"] : "" ?>" name="attack" placeholder="99">
+                                    <p class="from1__error4 from1__error"><?= $errors ? $errors["attack"] : "" ?></p>
                                 </div>
                                 <div class="from1__item">
                                     <label for="defense" class="from1__label">Defense:</label>
-                                    <input type="number" class="from1__input from1__input3" id="defense" name="defense" placeholder="99">
-                                    <p class="from1__error5 from1__error"></p>
+                                    <input type="number" class="from1__input from1__input3" id="defense" 
+                                    value="<?= $input ? $input["defense"] : "" ?>" name="defense" placeholder="99">
+                                    <p class="from1__error5 from1__error"><?= $errors ? $errors["defense"] : "" ?></p>
                                 </div>
                                 <div class="from1__item">
                                     <label for="price" class="from1__label">Price:</label>
-                                    <input type="number" class="from1__input from1__input3" id="price" name="price" placeholder="999">
-                                    <p class="from1__error6 from1__error"></p>
+                                    <input type="number" class="from1__input from1__input3" id="price" 
+                                    value="<?= $input ? $input["price"] : "" ?>" name="price" placeholder="999">
+                                    <p class="from1__error6 from1__error"><?= $errors ? $errors["price"] : "" ?></p>
                                 </div>
                                 <div class="from1__item">
                                     <label for="description" class="from1__label">Description:</label>
-                                    <textarea class="from1__textarea from1__input" id="description" name="description" placeholder="i love pokemons"></textarea>
-                                    <p class="from1__error7 from1__error"></p>
+                                    <textarea class="from1__textarea from1__input" id="description" 
+                                    name="description" placeholder="i love pokemons"><?= $input ? $input["description"] : "" ?></textarea>
+                                    <p class="from1__error7 from1__error"><?= $errors ? $errors["description"] : "" ?></p>
                                 </div>
                                 <div class="from1__item">
                                     <label for="image" class="from1__label">Image:</label>
-                                    <input type="text" class="from1__input from1__input3" id="image" name="image" 
-                                    value="https://assets.pokemon.com/assets/cms2/img/pokedex/full/<number>.png">
-                                    <p class="from1__error8 from1__error"></p>
+                                    <input type="text" class="from1__input from1__input3" id="image" 
+                                    value="<?= $input ? $input["image"] : "https://assets.pokemon.com/assets/cms2/img/pokedex/full/000.png" ?>" 
+                                    name="image" value="https://assets.pokemon.com/assets/cms2/img/pokedex/full/000.png">
+                                    <p class="from1__error8 from1__error" style="word-break: break-all;"><?= $errors ? $errors["image"] : "" ?></p>
                                 </div>
                             </div>
                             <div class="form1_end">
