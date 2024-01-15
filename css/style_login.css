@@ -1,0 +1,149 @@
+/*------------------------main------------------------*/
+
+.main {
+}
+
+.main__container {
+}
+
+.main__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.main__title {
+    text-align: center;
+}
+
+.main__body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__form1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.form1__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+}
+
+.from1__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+.from1__label {
+    font-size: 1.4rem;
+}
+
+.from1__input {
+    width: 400px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid #000000;
+    font-size: 1.4rem;
+    line-height: 23px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition-duration: 0.4s;
+}
+
+.from1__input:hover {
+    border: 2px solid #3f3f3f;
+    transition-duration: 0.4s;
+}
+
+.from1__input:focus {
+    border: 2px solid #3f3f3f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    transition-duration: 0.4s;
+}
+
+.from1__input1 {
+}
+
+.from1__error1 {
+}
+
+.from1__error {
+    font-size: 1rem;
+    color: #ff0000;
+    max-width: 400px;
+}
+
+.from1__input2 {
+}
+
+.form1_end {
+    display: flex;
+    gap: 30px;
+}
+
+.form1__button {
+    padding: 10px 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.4s;
+}
+
+.form1__button:hover {
+    background-color: #d7d7d7;
+    transition: background-color 0.4s;
+}
+
+.form1__button:active {
+    transform: scale(1.02);
+    transition: transform 0.2s;
+}
+
+.form1__button2 {
+}
+
+.form1__button1 {
+}
+
+@media(max-width: 600px){
+    .main__container {
+        padding: 10px;
+    }
+    .from1__item {
+        max-width: 300px;
+    }
+    .from1__input {
+        padding: 7px;
+        width: 300px;
+    }
+}
+
+@media(max-width: 426px){
+    .from1__label {
+        font-size: 1.2rem;
+    }
+    .from1__input {
+        font-size: 1.2rem;
+        width: 250px;
+    }
+    .from1__error {
+        font-size: 0.8rem;
+    }
+}

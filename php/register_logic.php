@@ -10,6 +10,7 @@ $users = $storage3->findAll() ?? null;
 $data = [];
 $errors = [];
 $input = $_GET ?? "";
+
 if ($input) {
     $valid = validate($data, $errors, $input, $types_colors);
     addNewElement($valid, $data, $storage3, $users);
@@ -112,7 +113,7 @@ function addNewElement($valid, $data, &$storage3, $users)
             $storage3->addWithId($new_elem, "user0");
         }
 
-        header("Location: ../index.php?user=" . $data["username"]);
+        header("Location: ../index.php?username=" . $data["username"]);
         exit();
     }
 }
