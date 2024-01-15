@@ -141,7 +141,7 @@ include "php/index_logic.php";
                                     </div>
                                 </div>
 
-                                <?php if(!$userIsAdmin && $user): ?>
+                                <?php if(!$userIsAdmin && $user && $elem["owner"] === "admin"): ?>
                                     <button type="button" class="card__bottom" style="
                                     background-color: <?= $storage2->findOne(['type' => $elem["type"]])["color"] ?>;">
                                         <div class="card__price prop">

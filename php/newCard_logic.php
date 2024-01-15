@@ -193,7 +193,8 @@ function addNewElement($valid, $data, &$storage1, $pokemons)
             "defense" => $data["defense"],
             "price" => $data["price"],
             "description" => $data["description"],
-            "image" => $data["image"]
+            "image" => $data["image"],
+            "owner" => "admin"
         ];
 
         if(!empty($pokemons)) {

@@ -238,6 +238,10 @@ body {
 .header__right-not-active {
 }
 
+.header__money {
+    text-align: center;
+}
+
 .header__button {
     padding: 10px 20px;
     background-color: unset;
@@ -255,6 +259,22 @@ body {
 }
 
 .buttext {
+}
+
+@media(max-width: 380px){
+    .header {
+        width: 100%;
+        height: 150px;
+    }
+    .header__right {
+        flex-direction: column;
+    }
+    .header__money {
+        order: 2
+    }
+    .header__button {
+        order: 1;
+    }
 }
 
 /*------------------------main------------------------*/

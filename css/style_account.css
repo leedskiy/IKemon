@@ -4,6 +4,7 @@
 }
 
 .main__container {
+    gap: 40px;
 }
 
 .main__content {
@@ -31,4 +32,178 @@
 }
 
 .main__buttext {
+}
+
+.main__top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main__username {
+}
+
+.main__email {
+}
+
+.main__money {
+}
+
+.main__cards {
+}
+
+/*----------main list----------*/
+
+.main__list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    display: flex;
+}
+
+.list__container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));   
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.list__card {
+    background-color: #ffffff;
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.card_top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;  
+}
+
+.card__icon { 
+}
+
+.card__image {
+    width: 150px;
+}
+
+.card__mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 10px;
+}
+
+.card__link {
+    position: relative;
+}
+
+.card__name {
+}
+
+.prop {
+    display: flex;
+    align-items: center;
+}
+
+.card__type {
+    display: flex;
+    gap: 5px;
+}
+
+.type__icon {
+}
+
+.icon {
+}
+
+.type__image {
+    width: 25px;
+}
+
+.type__value {
+}
+
+.card__chars {
+    display: flex;
+    gap: 15px;
+}
+
+.chars__hp {
+    display: flex;
+    gap: 5px;
+}
+
+.hp_icon {
+}
+
+.hp__image {
+    width: 30px;
+}
+
+.hp__value {
+}
+
+.chars__attack {
+    display: flex;
+    gap: 5px;
+}
+
+.attack__icon {
+}
+
+.attack__image {
+    width: 25px;
+}
+
+.attack__value {
+}
+
+.chars__defense {
+    display: flex;
+    gap: 5px;
+}
+
+.defense__icon {
+}
+
+.defense__image {
+    width: 25px;
+}
+
+.defense__value {
+}
+
+.card__bottom {
+    background-color: #000000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 7px;
+}
+
+.card__price {
+    display: flex;
+    gap: 5px;
+}
+
+.price__icon {
+}
+
+.price__image {
+    width: 30px;
+}
+
+.price__value {
 }

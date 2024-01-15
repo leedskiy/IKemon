@@ -8,6 +8,7 @@
         "price": 160,
         "description": "Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.",
         "image": "https:\/\/assets.pokemon.com\/assets\/cms2\/img\/pokedex\/full\/025.png",
+        "owner": "admin",
         "id": "card0"
     },
     "card1": {
@@ -19,6 +20,7 @@
         "price": 534,
         "description": "It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.",
         "image": "https:\/\/assets.pokemon.com\/assets\/cms2\/img\/pokedex\/full\/006.png",
+        "owner": "admin",
         "id": "card1"
     },
     "card2": {
@@ -30,6 +32,7 @@
         "price": 318,
         "description": "A strange seed was planted on its back at birth. The plant sprouts and grows with this POK\u00e9MON.",
         "image": "https:\/\/assets.pokemon.com\/assets\/cms2\/img\/pokedex\/full\/001.png",
+        "owner": "admin",
         "id": "card2"
     },
     "card3": {
@@ -41,6 +44,7 @@
         "price": 314,
         "description": "After birth, its back swells and hardens into a shell. Powerfully sprays foam from its mouth.",
         "image": "https:\/\/assets.pokemon.com\/assets\/cms2\/img\/pokedex\/full\/007.png",
+        "owner": "admin",
         "id": "card3"
     },
     "card4": {
@@ -52,6 +56,7 @@
         "price": 195,
         "description": "Its short feet are tipped with suction pads that enable it to tirelessly climb slopes and walls.",
         "image": "https:\/\/assets.pokemon.com\/assets\/cms2\/img\/pokedex\/full\/010.png",
+        "owner": "admin",
         "id": "card4"
     },
     "card5": {
@@ -63,6 +68,7 @@
         "price": 195,
         "description": "Often found in forests, eating leaves. It has a sharp venomous stinger on its head.",
         "image": "https:\/\/assets.pokemon.com\/assets\/cms2\/img\/pokedex\/full\/013.png",
+        "owner": "admin",
         "id": "card5"
     },
     "card6": {
@@ -74,6 +80,7 @@
         "price": 251,
         "description": "A common sight in forests and woods. It flaps its wings at ground level to kick up blinding sand.",
         "image": "https:\/\/assets.pokemon.com\/assets\/cms2\/img\/pokedex\/full\/016.png",
+        "owner": "admin",
         "id": "card6"
     },
     "card7": {
@@ -85,6 +92,7 @@
         "price": 253,
         "description": "Bites anything when it attacks. Small and very quick, it is a common sight in many places.",
         "image": "https:\/\/assets.pokemon.com\/assets\/cms2\/img\/pokedex\/full\/019.png",
+        "owner": "admin",
         "id": "card7"
     },
     "card8": {
@@ -96,6 +104,7 @@
         "price": 262,
         "description": "Eats bugs in grassy areas. It has to flap its short wings at high speed to stay airborne.",
         "image": "https:\/\/assets.pokemon.com\/assets\/cms2\/img\/pokedex\/full\/021.png",
+        "owner": "testacc",
         "id": "card8"
     },
     "card9": {
@@ -107,6 +116,7 @@
         "price": 288,
         "description": "Moves silently and stealthily. Eats the eggs of birds, such as PIDGEY and SPEAROW, whole.",
         "image": "https:\/\/assets.pokemon.com\/assets\/cms2\/img\/pokedex\/full\/023.png",
+        "owner": "testacc",
         "id": "card9"
     }
 }
