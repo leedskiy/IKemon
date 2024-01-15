@@ -30,8 +30,8 @@ include "../php/newCard_logic.php";
                         </h1>
                     </a>
                 </div>
-                <div class="header__right header__right-not-active">
-                    <button type="button" class="header_button">
+                <div class="header__right">
+                    <button type="button" class="header__button">
                         <p class="header__acc buttext">
                             Account
                         </p>

@@ -15,11 +15,13 @@ if ($input) {
 
 function isValidType($newType, $types_colors)
 {
-    $newType = str_replace(' ', '', $newType);
+    if(!empty($types_colors)) {
+        $newType = str_replace(' ', '', $newType);
 
-    foreach ($types_colors as $type => $typeData) {
-        if ($newType === $typeData['type']) {
-            return true;
+        foreach ($types_colors as $type => $typeData) {
+            if ($newType === $typeData['type']) {
+                return true;
+            }
         }
     }
 
@@ -117,7 +119,7 @@ function validate(&$data, &$errors, $input, $types_colors)
         $data["attack"] = intval($input["attack"]);
     }
 
-    // attack
+    // defense
 
     if (isset($input["defense"]) && strlen(trim($input["defense"])) === 0) {
         $errors["defense"] = "defense is required";
@@ -148,7 +150,7 @@ function validate(&$data, &$errors, $input, $types_colors)
     // description
 
     if (isset($input["description"]) && strlen(trim($input["description"])) === 0) {
-        $errors["description"] = "description is required!";
+        $errors["description"] = "description is required";
     } else {
         $data["description"] = $input["description"];
     }
@@ -156,10 +158,10 @@ function validate(&$data, &$errors, $input, $types_colors)
     // image
 
     if (isset($input["image"]) && strlen(trim($input["image"])) === 0) {
-        $errors["image"] = "image is required!";
+        $errors["image"] = "image is required";
     } else if (!isCorrectLink($input["image"])) {
         $errors["image"] = "link must start with \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/\", 
-        after that number must consist from 3 digits (1 == 001) and link must end with \".png\"";
+        after that image number must consist from 3 digits (1 => 001; 10 => 010) and link must end with \".png\"";
     } else if (!is_numeric(intval(substr($input["image"], 56, 3)))) {
         $errors["image"] = "image number can only be a number";
     }  else if (!filter_var(intval(substr($input["image"], 56, 3)), FILTER_VALIDATE_INT) || 
@@ -194,10 +196,15 @@ function addNewElement($valid, $data, &$storage1, $pokemons)
             "image" => $data["image"]
         ];
 
-        $pokemonIds = array_keys($pokemons);
-        $lastPokemonIdNum = intval(substr(end($pokemonIds), 4, 10));
-        $newPokemonId = "card" . ($lastPokemonIdNum + 1);
-        $storage1->addWithId($new_elem, $newPokemonId);
+        if(!empty($pokemons)) {
+            $pokemonIds = array_keys($pokemons);
+            $lastPokemonIdNum = intval(substr(end($pokemonIds), 4, 10));
+            $newPokemonId = "card" . ($lastPokemonIdNum + 1);
+            $storage1->addWithId($new_elem, $newPokemonId);
+        }
+        else {
+            $storage1->addWithId($new_elem, "card0");
+        }
 
         header("Location: ../index.php");
         exit();

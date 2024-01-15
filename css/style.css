@@ -234,7 +234,7 @@ body {
 .header__right-not-active {
 }
 
-.header_button {
+.header__button {
     padding: 10px 20px;
     background-color: unset;
     border-radius: 7px;
@@ -242,7 +242,7 @@ body {
     transition: background-color 0.4s;
 }
 
-.header_button:hover {
+.header__button:hover {
     background-color: #d7d7d7;
     transition: background-color 0.4s;
 }

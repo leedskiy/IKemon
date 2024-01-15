@@ -1,0 +1,34 @@
+/*------------------------main------------------------*/
+
+.main {
+}
+
+.main__container {
+}
+
+.main__content {
+    display: flex;
+    gap: 40px;
+}
+
+.main__button {
+    padding: 10px 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.4s;
+}
+
+.main__button:hover {
+    background-color: #d7d7d7;
+    transition: background-color 0.4s;
+}
+
+.main__button:active {
+    transform: scale(1.02);
+    transition: transform 0.2s;
+}
+
+.main__buttext {
+}

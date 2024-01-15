@@ -30,12 +30,14 @@ include "php/index_logic.php";
                         </h1>
                     </a>
                 </div>
-                <div class="header__right header__right-not-active">
-                    <button type="button" class="header_button">
-                        <p class="header__acc buttext-dark">
-                            Account
-                        </p>
-                    </button>
+                <div class="header__right"> 
+                    <form action="pages/account.php">
+                        <button type="submit" class="header__button">
+                            <p class="header__acc buttext-dark">
+                                Account
+                            </p>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
