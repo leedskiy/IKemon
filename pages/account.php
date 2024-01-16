@@ -31,7 +31,7 @@ include "../php/account_logic.php";
                     </a>
                 </div>
                 <div class="header__right">
-                    <?php if (($_SERVER['REQUEST_METHOD'] === 'POST') && $user):?>
+                    <?php if ($user):?>
                     <form action="../index.php">
                         <button type="submit" class="header__button">
                             <p class="header__acc buttext-dark">
@@ -44,13 +44,13 @@ include "../php/account_logic.php";
             </div>
         </div>
 
-        <?php if (($_SERVER['REQUEST_METHOD'] === 'POST') && $user):?>
+        <?php if ($user):?>
             <div class="main">
                 <div class="main__container __container">
                     <div class="main__top">
                         <h3 class="main__username">Username: <?= $username ?></h3>
                         <h3 class="main__email">Email: <?= $user["email"] ?></h3>
-                        <h3 class="main__money">Money: <?= $user["money"] ?></h3>
+                        <h3 class="main__money">Money: <?= $user["money"] ?? "unlimited" ?></h3>
                         <h3 class="main__cards">Cards:</h3>
                     </div>
 
@@ -117,22 +117,27 @@ include "../php/account_logic.php";
                                         </div>
 
                                         <?php if(!$userIsAdmin && $user): ?>
-                                            <button type="button" class="card__bottom" style="
-                                            background-color: <?= $storage2->findOne(['type' => $elem["type"]])["color"] ?>;">
-                                                <div class="card__price prop">
-                                                    <p class="<?=
-                                                        $storage2->findOne(['type' => $elem["type"]])["text_color"]
-                                                            == "#000000" ? "buttext-dark" : "buttext-light" ?>">
-                                                        Sell:
-                                                    </p>
+                                            <form action="./account.php?username=<?= $username ?>&card_id=<?= $elem['id'] ?>" method="post">
+                                                <!-- <input type="hidden" name="username" value="<?= $username ?>">
+                                                <input type="hidden" name="card_id" value="<?= $elem['id'] ?>"> -->
 
-                                                    <p class="price__value <?=
-                                                        $storage2->findOne(['type' => $elem["type"]])["text_color"]
-                                                            == "#000000" ? "buttext-dark" : "buttext-light" ?>">
-                                                        <?= $elem["price"] ?>
-                                                    </p>
-                                                </div>
-                                            </button>
+                                                <button type="submit" class="card__bottom" style="
+                                                background-color: <?= $storage2->findOne(['type' => $elem["type"]])["color"] ?>;">
+                                                    <div class="card__price prop">
+                                                        <p class="<?=
+                                                            $storage2->findOne(['type' => $elem["type"]])["text_color"]
+                                                                == "#000000" ? "buttext-dark" : "buttext-light" ?>">
+                                                            Sell:
+                                                        </p>
+
+                                                        <p class="price__value <?=
+                                                            $storage2->findOne(['type' => $elem["type"]])["text_color"]
+                                                                == "#000000" ? "buttext-dark" : "buttext-light" ?>">
+                                                            <?= calculate90($elem["price"])  ?>
+                                                        </p>
+                                                    </div>
+                                                </button>
+                                            </form>
                                         <?php endif; ?>
                                     </div>
                                 <?php endif; ?>

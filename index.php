@@ -68,6 +68,12 @@ include "php/index_logic.php";
 
         <div class="main">
             <div class="main__container __container">
+                <?php if (isset($_GET["sold"]) && $_GET["sold"] === "false"):?>
+                    <p class="main__error">
+                        Cannot buy: you dont have enough money
+                    </p>
+                <?php endif;?>
+
                 <?php if ($userIsAdmin): ?>
                     <div class="main__top">
                         <form action="pages/newCard.php">
@@ -142,20 +148,25 @@ include "php/index_logic.php";
                                 </div>
 
                                 <?php if(!$userIsAdmin && $user && $elem["owner"] === "admin"): ?>
-                                    <button type="button" class="card__bottom" style="
-                                    background-color: <?= $storage2->findOne(['type' => $elem["type"]])["color"] ?>;">
-                                        <div class="card__price prop">
-                                            <div class="price__icon icon">
-                                                <img src="img/money_icon.png" alt="tag_icon" class="price__image">
-                                            </div>
+                                    <form action="." method="post">
+                                        <input type="hidden" name="username" value="<?= $username ?>">
+                                        <input type="hidden" name="card_id" value="<?= $elem['id'] ?>">
 
-                                            <p class="price__value <?=
-                                                                    $storage2->findOne(['type' => $elem["type"]])["text_color"]
-                                                                        == "#000000" ? "buttext-dark" : "buttext-light" ?>">
-                                                <?= $elem["price"] ?>
-                                            </p>
-                                        </div>
-                                    </button>
+                                        <button type="submit" class="card__bottom" style="
+                                        background-color: <?= $storage2->findOne(['type' => $elem["type"]])["color"] ?>;">
+                                            <div class="card__price prop">
+                                                <div class="price__icon icon">
+                                                    <img src="img/money_icon.png" alt="tag_icon" class="price__image">
+                                                </div>
+
+                                                <p class="price__value <?=
+                                                                        $storage2->findOne(['type' => $elem["type"]])["text_color"]
+                                                                            == "#000000" ? "buttext-dark" : "buttext-light" ?>">
+                                                    <?= $elem["price"] ?>
+                                                </p>
+                                            </div>
+                                        </button>
+                                    </form>
                                 <?php endif; ?>
                             </div>
                         <?php endforeach; ?>

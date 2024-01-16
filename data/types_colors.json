@@ -93,5 +93,29 @@
         "type": "stellar",
         "color": "#73ccff",
         "text_color": "#000000"
+    },
+    "card1": {
+        "name": "Charizard",
+        "type": "fire",
+        "hp": 78,
+        "attack": 84,
+        "defense": 78,
+        "price": 534,
+        "description": "It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.",
+        "image": "https:\/\/assets.pokemon.com\/assets\/cms2\/img\/pokedex\/full\/006.png",
+        "owner": "testacc",
+        "id": "card1"
+    },
+    "card0": {
+        "name": "Pikachu",
+        "type": "electric",
+        "hp": 60,
+        "attack": 20,
+        "defense": 20,
+        "price": 160,
+        "description": "Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.",
+        "image": "https:\/\/assets.pokemon.com\/assets\/cms2\/img\/pokedex\/full\/025.png",
+        "owner": "testacc",
+        "id": "card0"
     }
 }
