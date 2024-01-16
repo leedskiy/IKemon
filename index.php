@@ -68,9 +68,9 @@ include "php/index_logic.php";
 
         <div class="main">
             <div class="main__container __container">
-                <?php if (isset($_GET["sold"]) && $_GET["sold"] === "false"):?>
+                <?php if (isset($_GET["error"]) && $_GET["error"] !== ""):?>
                     <p class="main__error">
-                        Cannot buy: you dont have enough money
+                        Error: <?= $_GET["error"] ?>
                     </p>
                 <?php endif;?>
 
