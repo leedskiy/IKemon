@@ -12,4 +12,9 @@ Pokémons have been released into our world! Naturally, NFT merchants quickly se
 * admin can not buy cards
 * all users and cards are stored in json files
 
-![website_screenshot](./img/website_screenshot.png)
+## Main page
+![website_screenshot](./img/index_page_screenshot.png)
+## Card details page
+![website_screenshot](./img_readme/card_page_screenshot.png)
+## New card adding page
+![website_screenshot](./img_readme/newcard_page_screenshot.png)
