@@ -13,7 +13,7 @@ Pokémons have been released into our world! Naturally, NFT merchants quickly se
 * all users and cards are stored in json files
 
 ## Main page
-![website_screenshot](./img/index_page_screenshot.png)
+![website_screenshot](./img_readme/index_page_screenshot.png)
 ## Card details page
 ![website_screenshot](./img_readme/card_page_screenshot.png)
 ## New card adding page
