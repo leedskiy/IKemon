@@ -31,11 +31,27 @@ include "../php/newCard_logic.php";
                     </a>
                 </div>
                 <div class="header__right">
-                    <button type="button" class="header__button">
-                        <p class="header__acc buttext">
-                            Account
-                        </p>
-                    </button>
+                    <?php if ($user):?>
+                        <form method="post" action="account.php?username=<?= $user["username"] ?>">
+                            <button type="submit" class="header__button">
+                                <p class="header__acc buttext-dark">
+                                    <?php 
+                                        if($user) {
+                                            echo $user["username"];
+                                        }
+                                    ?>
+                                </p>
+                            </button>
+                        </form>
+                    <?php else: ?>
+                        <form action="pages/account.php">
+                            <button type="submit" class="header__button">
+                                <p class="header__acc buttext-dark">
+                                    Account
+                                </p>
+                            </button>
+                        </form>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
