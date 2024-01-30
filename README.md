@@ -1,4 +1,4 @@
-# Ikemon
+# IKemon
 Pokémons have been released into our world! Naturally, NFT merchants quickly seized the opportunity and set about creating the most obvious way to trade, a website.
 ## Website was built using PHP.
 ### It has account system.
@@ -12,4 +12,4 @@ Pokémons have been released into our world! Naturally, NFT merchants quickly se
 * admin can not buy cards
 * all users and cards are stored in json files
 
-![website_screenshot](./website_screenshot.png)
+![website_screenshot](./img/website_screenshot.png)
